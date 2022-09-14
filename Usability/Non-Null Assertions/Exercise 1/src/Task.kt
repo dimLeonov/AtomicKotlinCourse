@@ -1,0 +1,23 @@
+// NonNullAssertions/Task1.kt
+package nonNullAssertionsExercise1
+import atomictest.*
+
+class Rocket {
+    fun ignition() : String {
+        return "Liftoff!"
+    }
+}
+
+fun launch(rocket: Rocket?): String =
+    rocket!!.ignition()
+
+
+fun main() {
+
+  val rocket = Rocket()
+  launch(rocket) eq "Liftoff!"
+  capture {
+    launch(null)
+  } eq "NullPointerException"
+
+}

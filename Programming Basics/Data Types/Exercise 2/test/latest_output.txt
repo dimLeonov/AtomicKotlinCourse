@@ -1,0 +1,2 @@
+The type that can be combined with every other type using '+':
+String
